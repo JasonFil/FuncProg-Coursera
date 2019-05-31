@@ -1,0 +1,25 @@
+[error] C:\Users\jason\code\example\project\CommonBuild.scala:3:27: not found: type Build
+[error] trait CommonBuild extends Build {
+[error]                           ^
+[error] C:\Users\jason\code\example\project\ScalaTestRunner.scala:6:14: object pickling is not a member of package scala
+[error] import scala.pickling.Defaults._
+[error]              ^
+[error] C:\Users\jason\code\example\project\ScalaTestRunner.scala:7:14: object pickling is not a member of package scala
+[error] import scala.pickling.json._
+[error]              ^
+[error] C:\Users\jason\code\example\project\ScalaTestRunner.scala:152:72: value unpickle is not a member of String
+[error]       scala.io.Source.fromFile(summaryFileStr).getLines.mkString("\n").unpickle[GradingSummary]
+[error]                                                                        ^
+[error] C:\Users\jason\code\example\project\StudentBuildLike.scala:51:32: not found: value relativeTo
+[error] Error occurred in an application involving default arguments.
+[error]     withoutCommonSources pair (relativeTo(sdirs) | relativeTo(base) | flat)
+[error]                                ^
+[error] C:\Users\jason\code\example\project\StudentBuildLike.scala:51:52: not found: value relativeTo
+[error] Error occurred in an application involving default arguments.
+[error]     withoutCommonSources pair (relativeTo(sdirs) | relativeTo(base) | flat)
+[error]                                                    ^
+[error] C:\Users\jason\code\example\project\StudentBuildLike.scala:51:71: not found: value flat
+[error] Error occurred in an application involving default arguments.
+[error]     withoutCommonSources pair (relativeTo(sdirs) | relativeTo(base) | flat)
+[error]                                                                       ^
+[error] 7 errors found

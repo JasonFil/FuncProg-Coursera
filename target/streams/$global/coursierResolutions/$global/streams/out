@@ -1,0 +1,10 @@
+coursier.ResolutionException: Encountered 1 error(s) in dependency resolution:
+    org.scalatest:scalatest_2.12:2.2.4:
+        not found:
+            C:\Users\jason\.ivy2\local\org.scalatest\scalatest_2.12\2.2.4\ivys\ivy.xml
+            https://repo1.maven.org/maven2/org/scalatest/scalatest_2.12/2.2.4/scalatest_2.12-2.2.4.pom
+[error] (*:coursierResolutions) coursier.ResolutionException: Encountered 1 error(s) in dependency resolution:
+[error]     org.scalatest:scalatest_2.12:2.2.4:
+[error]         not found:
+[error]             C:\Users\jason\.ivy2\local\org.scalatest\scalatest_2.12\2.2.4\ivys\ivy.xml
+[error]             https://repo1.maven.org/maven2/org/scalatest/scalatest_2.12/2.2.4/scalatest_2.12-2.2.4.pom
