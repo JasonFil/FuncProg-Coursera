@@ -3,7 +3,9 @@
   <component name="ScalaCompilerConfiguration">
     <profile name="sbt 1" modules="funcprog-coursera_6253" />
     <profile name="sbt 2" modules="progfun1-example">
+      <option name="postfixOps" value="true" />
       <option name="deprecationWarnings" value="true" />
+      <option name="featureWarnings" value="true" />
     </profile>
   </component>
 </project>
