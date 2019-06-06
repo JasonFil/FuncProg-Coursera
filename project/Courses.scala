@@ -13,8 +13,8 @@ object Courses {
     "progfun1" -> {
         val styleSheetPath = "scalastyle" :: "scalastyle_config.xml" :: Nil
         Map(
-          "example" -> Assignment(
-            packageName = "example",
+          "week1" -> Assignment(
+            packageName = "week1",
             courseraId = CourseraId("g4unnjZBEeWj7SIAC5PFxA", "d5jxI", "xIz9O", None),
             maxScore = 10d,
             styleCheck = Some(StyleCheck(0.2, styleSheetPath))),
@@ -50,8 +50,8 @@ object Courses {
 
     "parprog1" -> {
       Map(
-        "example" -> Assignment(
-          packageName = "example",
+        "week1" -> Assignment(
+          packageName = "week1",
           courseraId = CourseraId("_Cuio9oTEeWUtQpvX4iAkw", "WGx0f", "gM5Y4", None),
           maxScore = 10d
         ),
@@ -81,8 +81,8 @@ object Courses {
     "progfun2" -> {
       val styleSheetPath = "scalastyle" :: "scalastyle_config.xml" :: Nil
       Map(
-        "example" -> Assignment(
-          packageName = "example",
+        "week1" -> Assignment(
+          packageName = "week1",
           courseraId = CourseraId("lLkU5d7xEeWGkg7lknKHZw", "5QFuy", "AYDPu", None),
           maxScore = 10d,
           styleCheck = Some(StyleCheck(0.2, styleSheetPath))),
@@ -110,8 +110,8 @@ object Courses {
 
     "bigdata" -> {
       Map(
-        "example" -> Assignment(
-          packageName = "example",
+        "week1" -> Assignment(
+          packageName = "week1",
           courseraId = CourseraId("9W3VuiJREeaFaw43_UrNUw", "vsJoj", "I6L8m", None),
           maxScore = 10d,
           options = Map("Xmx"->"1540m", "grader-memory"->"2048")),

@@ -1,4 +1,4 @@
-package example
+package week1
 
 import scala.annotation.tailrec
 
@@ -10,7 +10,7 @@ object Lists {
    * multiple techniques that can be used for implementing this method, and
    * you will learn during the class.
    *
-   * For this example assignment you can use the following methods in class
+   * For this week1 assignment you can use the following methods in class
    * `List`:
    *
    *  - `xs.isEmpty: Boolean` returns `true` if the list `xs` is empty
@@ -28,7 +28,7 @@ object Lists {
     def sum(xs: List[Int]): Int = {
       @tailrec
       def sumRec(xs: List[Int], accum:Int): Int = {
-        if (xs isEmpty) accum else sumRec(xs.tail, xs.head + accum)
+        if (xs.isEmpty) accum else sumRec(xs.tail, xs.head + accum)
       }
       sumRec(xs, 0)
     }
@@ -47,10 +47,10 @@ object Lists {
    * @throws java.util.NoSuchElementException if `xs` is an empty list
    */
     def max(xs: List[Int]): Int = {
-      if(xs isEmpty) throw new NoSuchElementException("List was empty.")
+      if(xs.isEmpty) throw new NoSuchElementException("List was empty.")
       @tailrec
       def maxRec(xs: List[Int], currMax:Int) : Int = {
-        if(xs isEmpty) currMax else
+        if(xs.isEmpty) currMax else
           maxRec(xs.tail, if (currMax >= xs.head) currMax else xs.head )
       }
       maxRec(xs.tail, xs.head)
