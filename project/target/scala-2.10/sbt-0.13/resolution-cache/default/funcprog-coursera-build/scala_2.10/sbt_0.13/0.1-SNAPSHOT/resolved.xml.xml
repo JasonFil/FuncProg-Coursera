@@ -4,7 +4,7 @@
 		module="funcprog-coursera-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20190603200136"
+		publication="20190611155544"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>
