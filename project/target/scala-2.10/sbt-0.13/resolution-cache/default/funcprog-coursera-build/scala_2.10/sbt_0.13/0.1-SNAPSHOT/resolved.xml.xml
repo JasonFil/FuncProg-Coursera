@@ -4,7 +4,7 @@
 		module="funcprog-coursera-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20190611155544"
+		publication="20190613170347"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>
@@ -42,12 +42,12 @@
 			<artifact name="global-plugins" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 			<artifact name="global-plugins" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 		</dependency>
+		<dependency org="org.scalaj" name="scalaj-http_2.10" rev="2.4.1" conf="compile->default(compile)"/>
+		<dependency org="commons-codec" name="commons-codec" rev="1.10" conf="compile->default(compile)"/>
+		<dependency org="org.apache.commons" name="commons-lang3" rev="3.4" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.sbteclipse" name="sbteclipse-plugin" rev="5.2.4" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
 		<dependency org="org.scala-js" name="sbt-scalajs" rev="0.6.22" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
 		<dependency org="io.get-coursier" name="sbt-coursier" rev="1.0.2" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
 		<dependency org="org.scalastyle" name="scalastyle-sbt-plugin" rev="1.0.0" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
-		<dependency org="org.scalaj" name="scalaj-http_2.10" rev="2.4.1" conf="compile->default(compile)"/>
-		<dependency org="commons-codec" name="commons-codec" rev="1.10" conf="compile->default(compile)"/>
-		<dependency org="org.apache.commons" name="commons-lang3" rev="3.4" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

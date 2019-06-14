@@ -1,15 +1,107 @@
-[0m[[0mdebug[0m] [0m[naha] [0m
-[0m[[0mdebug[0m] [0m[naha] Initial source changes: [0m
-[0m[[0mdebug[0m] [0m[naha] 	removed:Set()[0m
-[0m[[0mdebug[0m] [0m[naha] 	added: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] 	modified: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidated products: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] External API changes: API Changes: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] Modified binary dependencies: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] Initial directly invalidated sources: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] [0m
-[0m[[0mdebug[0m] [0m[naha] Sources indirectly invalidated by:[0m
-[0m[[0mdebug[0m] [0m[naha] 	product: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] 	binary dep: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] 	external source: Set()[0m
-[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set()[0m
+[debug] [naha] Invalidating \Library\Java\JavaVirtualMachines\jdk1.8.0_121.jdk\Contents\Home\jre\lib\rt.jar: class java.lang.Object now provided by C:\Program Files\Java\jdk1.8.0_191\jre\lib\rt.jar
+[debug] [naha] Invalidating \Users\jason\Library\Caches\Coursier\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.12.8\scala-library-2.12.8.jar: class scala.package$ now provided by C:\Users\jason\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.12.8\scala-library-2.12.8.jar
+[debug] [naha] 
+[debug] [naha] Initial source changes: 
+[debug] [naha] 	removed:Set(\Users\jason\code\FuncProg-Coursera\src\main\scala\common\package.scala, \Users\jason\code\FuncProg-Coursera\src\main\scala\example\Lists.scala)
+[debug] [naha] 	added: Set(C:\Users\jason\code\FuncProg-Coursera\src\main\scala\common\package.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\Currying.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Assignment.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\HigherOrderFunctions.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\rational\Runner.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\rational\Rational.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Factorial.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Lists.scala)
+[debug] [naha] 	modified: Set()
+[debug] [naha] Invalidated products: Set(\Users\jason\code\FuncProg-Coursera\target\scala-2.12\classes\common\package$.class, \Users\jason\code\FuncProg-Coursera\target\scala-2.12\classes\common\package.class, \Users\jason\code\FuncProg-Coursera\target\scala-2.12\classes\example\Lists$.class, \Users\jason\code\FuncProg-Coursera\target\scala-2.12\classes\example\Lists.class)
+[debug] [naha] External API changes: API Changes: Set()
+[debug] [naha] Modified binary dependencies: Set(\Library\Java\JavaVirtualMachines\jdk1.8.0_121.jdk\Contents\Home\jre\lib\rt.jar, \Users\jason\Library\Caches\Coursier\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.12.8\scala-library-2.12.8.jar)
+[debug] [naha] Initial directly invalidated sources: Set(C:\Users\jason\code\FuncProg-Coursera\src\main\scala\common\package.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\Currying.scala, \Users\jason\code\FuncProg-Coursera\src\main\scala\example\Lists.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Assignment.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\HigherOrderFunctions.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\rational\Runner.scala, \Users\jason\code\FuncProg-Coursera\src\main\scala\common\package.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\rational\Rational.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Factorial.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Lists.scala)
+[debug] [naha] 
+[debug] [naha] Sources indirectly invalidated by:
+[debug] [naha] 	product: Set(\Users\jason\code\FuncProg-Coursera\src\main\scala\common\package.scala, \Users\jason\code\FuncProg-Coursera\src\main\scala\example\Lists.scala)
+[debug] [naha] 	binary dep: Set(\Users\jason\code\FuncProg-Coursera\src\main\scala\example\Lists.scala, \Users\jason\code\FuncProg-Coursera\src\main\scala\common\package.scala)
+[debug] [naha] 	external source: Set()
+[debug] All initially invalidated sources: Set(C:\Users\jason\code\FuncProg-Coursera\src\main\scala\common\package.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\Currying.scala, \Users\jason\code\FuncProg-Coursera\src\main\scala\example\Lists.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Assignment.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\HigherOrderFunctions.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\rational\Runner.scala, \Users\jason\code\FuncProg-Coursera\src\main\scala\common\package.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\rational\Rational.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Factorial.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Lists.scala)
+[debug] [naha] Initial set of included nodes: Set(C:\Users\jason\code\FuncProg-Coursera\src\main\scala\common\package.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\Currying.scala, \Users\jason\code\FuncProg-Coursera\src\main\scala\example\Lists.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Assignment.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\HigherOrderFunctions.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\rational\Runner.scala, \Users\jason\code\FuncProg-Coursera\src\main\scala\common\package.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\rational\Rational.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Factorial.scala, C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Lists.scala)
+[debug] [naha] Recompiling all 8 sources: invalidated sources (10) exceeded 50.0% of all sources
+[info] Compiling 8 Scala sources to C:\Users\jason\code\FuncProg-Coursera\target\scala-2.12\classes...
+[debug] Getting org.scala-sbt:compiler-interface:0.13.18:component from component compiler for Scala 2.12.8
+[debug] Getting org.scala-sbt:compiler-interface:0.13.18:component from component compiler for Scala 2.12.8
+[debug] Running cached compiler 3715ba8e, interfacing (CompilerInterface) with Scala compiler version 2.12.8
+[debug] Calling Scala compiler with arguments  (CompilerInterface):
+[debug] 	-deprecation
+[debug] 	-feature
+[debug] 	-bootclasspath
+[debug] 	C:\Program Files\Java\jdk1.8.0_191\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_191\jre\classes;C:\Users\jason\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.12.8\scala-library-2.12.8.jar
+[debug] 	-classpath
+[debug] 	C:\Users\jason\code\FuncProg-Coursera\target\scala-2.12\classes;C:\Users\jason\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\modules\scala-parser-combinators_2.12\1.0.4\scala-parser-combinators_2.12-1.0.4.jar;C:\Users\jason\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scalactic\scalactic_2.12\3.0.5\scalactic_2.12-3.0.5.jar;C:\Users\jason\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scalatest\scalatest_2.12\3.0.5\scalatest_2.12-3.0.5.jar;C:\Users\jason\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\modules\scala-xml_2.12\1.0.6\scala-xml_2.12-1.0.6.jar;C:\Users\jason\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-reflect\2.12.8\scala-reflect-2.12.8.jar
+[debug] Scala compilation took 2.218547209 s
+[debug] [naha] Invalidating C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\rational\Runner.scala...
+[debug] [naha] Invalidating (transitively) by inheritance from C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\rational\Runner.scala...
+[debug] [naha] Initial set of included nodes: Set(C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\rational\Runner.scala)
+[debug] [naha] Invalidated by transitive inheritance dependency: Set(C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\rational\Runner.scala)
+[debug] [naha] The C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\rational\Runner.scala source file has the following regular definitions changed:
+[debug] [naha] 	notify, wait, $asInstanceOf, equals, asInstanceOf, executionStart, synchronized, $isInstanceOf, main, notifyAll, isInstanceOf, ==, clone, Runner, $init$, toString, args, !=, getClass, ne, eq, delayedInit, ##, finalize, hashCode.
+[debug] [naha] All member reference dependencies will be considered within this context.
+[debug] [naha] Invalidating C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\rational\Rational.scala...
+[debug] [naha] Invalidating (transitively) by inheritance from C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\rational\Rational.scala...
+[debug] [naha] Initial set of included nodes: Set(C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\rational\Rational.scala)
+[debug] [naha] Invalidated by transitive inheritance dependency: Set(C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\rational\Rational.scala)
+[debug] [naha] The C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\rational\Rational.scala source file has the following regular definitions changed:
+[debug] [naha] 	notify, wait, $asInstanceOf, subtract, equals, asInstanceOf, synchronized, $isInstanceOf, divide, notifyAll, pow, isInstanceOf, <init>, ONE, ==, clone, multiply, toString, !=, getClass, Rational, ne, add, eq, ##, finalize, hashCode.
+[debug] [naha] All member reference dependencies will be considered within this context.
+[debug] [naha] Invalidating C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\Currying.scala...
+[debug] [naha] Invalidating (transitively) by inheritance from C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\Currying.scala...
+[debug] [naha] Initial set of included nodes: Set(C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\Currying.scala)
+[debug] [naha] Invalidated by transitive inheritance dependency: Set(C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\Currying.scala)
+[debug] [naha] The C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\Currying.scala source file has the following regular definitions changed:
+[debug] [naha] 	notify, Currying, factorial, wait, $asInstanceOf, equals, mapReduce, asInstanceOf, executionStart, synchronized, $isInstanceOf, sum2, main, notifyAll, isInstanceOf, ==, clone, $init$, toString, args, !=, getClass, ne, eq, sum, delayedInit, ##, finalize, hashCode, product.
+[debug] [naha] All member reference dependencies will be considered within this context.
+[debug] [naha] Invalidating C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Lists.scala...
+[debug] [naha] Invalidating (transitively) by inheritance from C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Lists.scala...
+[debug] [naha] Initial set of included nodes: Set(C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Lists.scala)
+[debug] [naha] Invalidated by transitive inheritance dependency: Set(C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Lists.scala)
+[debug] [naha] The C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Lists.scala source file has the following regular definitions changed:
+[debug] [naha] 	notify, Lists, wait, $asInstanceOf, equals, asInstanceOf, synchronized, $isInstanceOf, notifyAll, isInstanceOf, max, ==, clone, toString, !=, getClass, ne, eq, sum, ##, finalize, hashCode.
+[debug] [naha] All member reference dependencies will be considered within this context.
+[debug] [naha] Invalidating C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\HigherOrderFunctions.scala...
+[debug] [naha] Invalidating (transitively) by inheritance from C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\HigherOrderFunctions.scala...
+[debug] [naha] Initial set of included nodes: Set(C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\HigherOrderFunctions.scala)
+[debug] [naha] Invalidated by transitive inheritance dependency: Set(C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\HigherOrderFunctions.scala)
+[debug] [naha] The C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week2\HigherOrderFunctions.scala source file has the following regular definitions changed:
+[debug] [naha] 	notify, wait, $asInstanceOf, equals, HigherOrderFunctions, asInstanceOf, executionStart, synchronized, $isInstanceOf, main, notifyAll, isInstanceOf, ==, clone, $init$, toString, args, !=, getClass, ne, eq, sum, delayedInit, ##, finalize, hashCode.
+[debug] [naha] All member reference dependencies will be considered within this context.
+[debug] [naha] Invalidating C:\Users\jason\code\FuncProg-Coursera\src\main\scala\common\package.scala...
+[debug] [naha] Invalidating (transitively) by inheritance from C:\Users\jason\code\FuncProg-Coursera\src\main\scala\common\package.scala...
+[debug] [naha] Initial set of included nodes: Set(C:\Users\jason\code\FuncProg-Coursera\src\main\scala\common\package.scala)
+[debug] [naha] Invalidated by transitive inheritance dependency: Set(C:\Users\jason\code\FuncProg-Coursera\src\main\scala\common\package.scala)
+[debug] [naha] The C:\Users\jason\code\FuncProg-Coursera\src\main\scala\common\package.scala source file has the following regular definitions changed:
+[debug] [naha] 	notify, package, wait, $asInstanceOf, equals, asInstanceOf, synchronized, $isInstanceOf, resourceAsStreamFromSrc, notifyAll, isInstanceOf, ???, ==, clone, subFile, toString, !=, getClass, ne, eq, ##, finalize, hashCode, ***.
+[debug] [naha] All member reference dependencies will be considered within this context.
+[debug] [naha] Invalidating C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Assignment.scala...
+[debug] [naha] Invalidating (transitively) by inheritance from C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Assignment.scala...
+[debug] [naha] Initial set of included nodes: Set(C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Assignment.scala)
+[debug] [naha] Invalidated by transitive inheritance dependency: Set(C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Assignment.scala)
+[debug] [naha] The C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Assignment.scala source file has the following regular definitions changed:
+[debug] [naha] 	notify, wait, $asInstanceOf, equals, asInstanceOf, synchronized, $isInstanceOf, pascal, balance, main, notifyAll, isInstanceOf, ==, clone, toString, Assignment, !=, getClass, countChange, ne, eq, ##, finalize, hashCode.
+[debug] [naha] All member reference dependencies will be considered within this context.
+[debug] [naha] Invalidating \Users\jason\code\FuncProg-Coursera\src\main\scala\common\package.scala...
+[debug] [naha] Invalidating (transitively) by inheritance from \Users\jason\code\FuncProg-Coursera\src\main\scala\common\package.scala...
+[debug] [naha] Initial set of included nodes: Set(\Users\jason\code\FuncProg-Coursera\src\main\scala\common\package.scala)
+[debug] [naha] Invalidated by transitive inheritance dependency: Set(\Users\jason\code\FuncProg-Coursera\src\main\scala\common\package.scala)
+[debug] [naha] The \Users\jason\code\FuncProg-Coursera\src\main\scala\common\package.scala source file has the following regular definitions changed:
+[debug] [naha] 	notify, package, wait, $asInstanceOf, equals, asInstanceOf, synchronized, $isInstanceOf, resourceAsStreamFromSrc, notifyAll, isInstanceOf, ???, ==, clone, subFile, toString, !=, getClass, ne, eq, ##, finalize, hashCode, ***.
+[debug] [naha] All member reference dependencies will be considered within this context.
+[debug] [naha] Invalidating C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Factorial.scala...
+[debug] [naha] Invalidating (transitively) by inheritance from C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Factorial.scala...
+[debug] [naha] Initial set of included nodes: Set(C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Factorial.scala)
+[debug] [naha] Invalidated by transitive inheritance dependency: Set(C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Factorial.scala)
+[debug] [naha] The C:\Users\jason\code\FuncProg-Coursera\src\main\scala\week1\Factorial.scala source file has the following regular definitions changed:
+[debug] [naha] 	notify, wait, $asInstanceOf, factorialNaive, equals, asInstanceOf, executionStart, synchronized, $isInstanceOf, main, notifyAll, factorialTailRec, isInstanceOf, ==, clone, $init$, ITERS, toString, args, !=, getClass, ne, Factorial, eq, delayedInit, ##, finalize, hashCode.
+[debug] [naha] All member reference dependencies will be considered within this context.
+[debug] [naha] Invalidating \Users\jason\code\FuncProg-Coursera\src\main\scala\example\Lists.scala...
+[debug] [naha] Invalidating (transitively) by inheritance from \Users\jason\code\FuncProg-Coursera\src\main\scala\example\Lists.scala...
+[debug] [naha] Initial set of included nodes: Set(\Users\jason\code\FuncProg-Coursera\src\main\scala\example\Lists.scala)
+[debug] [naha] Invalidated by transitive inheritance dependency: Set(\Users\jason\code\FuncProg-Coursera\src\main\scala\example\Lists.scala)
+[debug] [naha] The \Users\jason\code\FuncProg-Coursera\src\main\scala\example\Lists.scala source file has the following regular definitions changed:
+[debug] [naha] 	notify, Lists, wait, $asInstanceOf, equals, asInstanceOf, synchronized, $isInstanceOf, notifyAll, isInstanceOf, max, ==, clone, toString, !=, getClass, ne, eq, sum, ##, finalize, hashCode.
+[debug] [naha] All member reference dependencies will be considered within this context.
+[debug] [naha] New invalidations:
+[debug] [naha] 	Set()
+[debug] [naha] Initial set of included nodes: Set()
+[debug] [naha] Previously invalidated, but (transitively) depend on new invalidations:
+[debug] [naha] 	Set()
+[debug] [naha] All newly invalidated sources after taking into account (previously) recompiled sources:Set()
