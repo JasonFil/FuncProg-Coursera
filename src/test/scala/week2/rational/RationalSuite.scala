@@ -1,18 +1,18 @@
 package week2.rational
-
 import org.scalatest.FunSuite
-
-
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 
 @RunWith(classOf[JUnitRunner])
 class RationalSuite extends FunSuite {
-  import week2.rational
+  import week2.rational.Rational
 
+  val MAX_INT = 100;
   // Positive tests
-  test("balance: empty string is balanced"){
-    assert(balance("".toList))
+  test("Exhaustively test against scala.math.pow ){
+    for(i<-0 to 10)
+      for(j<-1 to 10)
+        assert(pow())
   }
 
   test("balance: left and right paren balanced"){

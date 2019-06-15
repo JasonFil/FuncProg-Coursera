@@ -51,13 +51,11 @@ class Rational (x:Int, y:Int){
 
   def multiply(that:Rational) = new Rational(this.numer * that.numer, this.denom * that.denom)
 
-  def divide(that:Rational) = {
-    new Rational(this.numer * that.denom, this.denom * that.numer )
-  }
+  def divide(that:Rational) =  new Rational(this.numer * that.denom, this.denom * that.numer )
 
-  def lessThan(that:Rational): Unit = {
+  /*def lessThan(that:Rational): Unit = {
     def ltZero(this.subtract(that))
-  }
+  }*/
 
   def pow(n:Int):Rational = {
     // Inner two-arg function

@@ -13,7 +13,7 @@ object Currying extends App{
     * @note First argument needs to be not greater than the second one.
     * @return A function which will calculate the sum of f(i) for all Ints i in the closed interval [a, b]
     */
-  def sum(f:Int=>Int)(a:Int, b:Int): Int = {
+ /* def sum(f:Int=>Int)(a:Int, b:Int): Int = {
     require(a <=  b, "Received a=" + a + " and b=" + b)
     @tailrec
     def sum(a:Int, acc:Int) : Int = {
@@ -24,7 +24,7 @@ object Currying extends App{
   }
 
   println("Sum of squares from 1 to 100 = " + sum(x=>x*x)(1, 100))
-  println("Sum of cubes from 1 to 100 = " + sum(x=>x*x*x)(1, 100))
+  println("Sum of cubes from 1 to 100 = " + sum(x=>x*x*x)(1, 100))*/
 
 
   /**
@@ -51,10 +51,10 @@ object Currying extends App{
   /**
     * Simple tail-recursive factorial.
     * @param n The non-negative integer to calculate the factorial of.
-    * @return n!
+    * @return exp!
     */
   def factorial(n:Int) = {
-    require(n >=0, "Provided invalid quantity for n: " + n)
+    require(n >=0, "Provided invalid quantity for exp: " + n)
     product(x=>x)(1, n)
   }
 
@@ -74,9 +74,4 @@ object Currying extends App{
     }
     mapReduce(lb, neutral)
   }
-
-  // Re-define sum of squares in terms of mapReduce
-  def sum2(f:Int => Int)(lb:Int, rb:Int): Int = mapReduce(f, (x, y) => x+y, 0)(lb, rb)
-
-  println("Sum of squares from 1 to 100 computed via mapReduce function is: " + sum2(x=>x*x)(1, 100))
 }
