@@ -17,7 +17,7 @@ object Factorial extends App {
     for (i <- 1 to ITERS) factorialNaive(i)
     println("Naive factorial worked up to " + ITERS + "!")
   } catch{
-    case  se:StackOverflowError => println("Naive factorial threw an instance of StackOverflowError.")
+    case  _:StackOverflowError => println("Naive factorial threw an instance of StackOverflowError.")
     case e: Exception => println("Naive factorial threw an instance of " + e.getClass + " with message: " + e.getMessage + ".")
   }
 

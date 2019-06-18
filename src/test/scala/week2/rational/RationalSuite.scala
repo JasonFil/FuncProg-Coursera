@@ -12,7 +12,7 @@ class RationalSuite extends FunSuite {
   }
 
   test("Unary operators"){
-    
+
   }
 
   test("Binary operators"){
@@ -27,7 +27,9 @@ class RationalSuite extends FunSuite {
 
   }
 
+  test("Exponentiation"){
 
+  }
 
 
 }

@@ -79,7 +79,7 @@ import org.scalatest.junit.JUnitRunner
    * In order to test the exceptional behavior of a methods, ScalaTest offers
    * the `intercept` operation.
    *
-   * In the following week1, we test the fact that the method `intNotZero`
+   * In the following test, we test the fact that the method `intNotZero`
    * throws an `IllegalArgumentException` if its argument is `0`.
    */
   test("intNotZero throws an exception if its argument is 0") {
