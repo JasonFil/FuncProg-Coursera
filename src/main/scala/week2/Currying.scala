@@ -13,7 +13,7 @@ object Currying extends App{
     * @note First argument needs to be not greater than the second one.
     * @return A function which will calculate the sum of f(i) for all Ints i in the closed interval [a, b]
     */
- /* def sum(f:Int=>Int)(a:Int, b:Int): Int = {
+  def sum(f:Int=>Int)(a:Int, b:Int): Int = {
     require(a <=  b, "Received a=" + a + " and b=" + b)
     @tailrec
     def sum(a:Int, acc:Int) : Int = {
@@ -24,7 +24,7 @@ object Currying extends App{
   }
 
   println("Sum of squares from 1 to 100 = " + sum(x=>x*x)(1, 100))
-  println("Sum of cubes from 1 to 100 = " + sum(x=>x*x*x)(1, 100))*/
+  println("Sum of cubes from 1 to 100 = " + sum(x=>x*x*x)(1, 100))
 
 
   /**

@@ -32,6 +32,10 @@ class Rational(x:Int, y:Int) {
     */
   def this(x:Int) = this(x, 1)
 
+  /**
+    * Prints this in the form of the fraction numer / denom.
+    * @return The fraction numer / denom (the `Rational` instance unevaluated).
+    */
   override def toString : String = numer + "/" + denom // give me something to work with
 
   // Properly writing an equals() method in Scala can be tricky business, as explained here: ]
@@ -45,7 +49,7 @@ class Rational(x:Int, y:Int) {
   override def equals(that:Any):Boolean = {
     that match {
       case that:Rational => that.canEqual(this)  && sameRational(that)// The pre-condition ensures that`that` is an instance of Rational while the post-condition tests if `this` is an instance of `that`.
-      case that:Integer => sameRational(new Rational(that, 1))      // When we compare with integers.
+      case that:Int => sameRational(new Rational(that, 1))      // When we compare with integers.
       case _ => false // covers null too (check http://daily-scala.blogspot.com/2010/01/matching-nulls.html)
 
     }
@@ -61,8 +65,8 @@ class Rational(x:Int, y:Int) {
   }
 
   /**
-    * Adds the provided Rational instance to this.
-    * @param that The provided Rational.
+    * Adds the provided `Rational` instance to this.
+    * @param that The provided `Rational`.
     * @return this + that.
     */
   def + (that:Rational):Rational  = {
@@ -71,9 +75,9 @@ class Rational(x:Int, y:Int) {
   }
 
   /**
-    *
-    * @param that
-    * @return
+    * Add the current `Rational` to the provided `Int`.
+    * @param that An `Int` to add this to.
+    * @return The `Rational` instance corresponding to the fraction (this + that).
     */
   def + (that:Int): Rational = this + new Rational(that, 1)
 
@@ -88,14 +92,14 @@ class Rational(x:Int, y:Int) {
   }
 
   /**
-    *
-    * @param that
-    * @return
+    * Subtracts the `Int` instance that` from this.
+    * @param that An Int` instance to subtract from this.
+    * @return this = that.
     */
   def - (that:Int) : Rational =  this - new Rational(that, 1)
 
   /**
-    * Multiplies the provided Rational instance with this.
+    * Multiplies the provided `Rational` instance with this.
     * @param that A Rational instance.
     * @return this * that.
     */
@@ -105,31 +109,37 @@ class Rational(x:Int, y:Int) {
   }
 
   /**
-    *
-    * @param that
-    * @return
+    * Multiplies the provided `Int` instance with this.
+    * @param that A Rational instance.
+    * @return this * that.
     */
   def * (that:Int) = new Rational(numer * that, denom)
 
   /**
-    * Divides the current Rational instance over the provided Rational instance,
+    * Divides the current `Rational` instance over the provided `Rational` instance,
     * as long as it is non-zero.
     * @param that A Rational instance which will play the role of the divisor.
     * @return this / that.
     * @throws IllegalArgumentException if that is zero.
     */
-  def / (that: Rational ): Rational = {   // Our equals is overloaded for integers too, so we can write that != 0 cleanly, even with a warning.
-    //noinspection ComparingUnrelatedTypes
-    require((that != null) && that != 0, "Rational / Rational: Provided null or zero argument")    // If we don't like the warning, we can compare with the instance ZERO
+  def / (that: Rational ): Rational = {
+    //noinspection ComparingUnrelatedTypes // for that != 0
+    require((that != null) && that != 0, "Rational / Rational: Provided null or zero argument")
     this * (that ^ (-1))
   }
 
   /**
-    *
-    * @param that
-    * @return
+    * Divides the current `Rational` instance over the provided `Int` instance,
+    * as long as it is non-zero.
+    * @param that A `Rational` instance which will play the role of the divisor.
+    * @return this / that.
+    * @throws IllegalArgumentException if that is zero.
     */
-  def / (that:Int) : Rational = new Rational(numer, denom * that)
+  def / (that:Int) : Rational = {
+    //noinspection ComparingUnrelatedTypes
+    require((that != null) && that != 0, "Rational / Rational: Provided null or zero argument")
+    new Rational(numer, denom * that)
+  }
   
   /**
     * Negates this.
@@ -155,30 +165,51 @@ class Rational(x:Int, y:Int) {
     * @param that An integer.
     * @return true iff this is STRICTLY greater than that, false otherwise.
     */
-  def > (that:Integer) : Boolean = this > new Rational(that, 1)
+  def > (that:Int) : Boolean = this > new Rational(that, 1)
 
-  def >= (that:Integer) : Boolean = {
+  /**
+    * Checks if the current `Rational` is bigger than OR equal to `that`.
+    * @param that An `Int` to compare this to.
+    * @return
+    */
+  def >= (that:Int) : Boolean = {
     val r = new Rational(that, 1)
     (this > r) || (this == r)       // Avoid calling constructor twice
   }
 
-  /**
-    *
-    * @param that
-    * @return
+  /** Checks if the current  `Rational` is STRICTLY smaller than the `Rational` provided.
+    * @param that A `Rational` to compare this to.
+    * @return true iff this < that, false otherwise.
     */
   def < (that:Rational) : Boolean = !(this >= that)
 
-  /**
-    *
-    * @param that
-    * @return
+  /** Checks if the current  `Rational` is  smaller than OR equal to the `Rational` provided.
+    * @param that A `Rational` to compare this to.
+    * @return true iff this <= that, false otherwise.
     */
   def <= (that:Rational) : Boolean = !(this > that)
 
   /**
+    * Checks if the current `Rational` is STRICTLY smaller than the `Int` provided.
+    * @param that An `Int` instance.
+    * @return true iff this < that, false otherwise.
+    */
+  def <(that:Int): Boolean = {
+    !(this >= that)
+  }
+
+  /**
+    * Checks if the current `Rational` is smaller than OR equal to the `Int` provided.
+    * @param that An `Int` instance.
+    * @return true iff this <= that, false otherwise.
+    */
+  def <= (that:Int):Boolean = {
+    !(this > that)
+  }
+
+  /**
     * Raises this to the provided power. The implementation is tail recursive
-    * and through repeated squaring, such that the code executes in \ceil{log_2n} iterations.
+    * and through repeated squaring, such that the code executes in O(log_2n) iterations.
     * @param n the power to which we will raise the current Rational instance.
     * @return this raised to the nth power, as long as this and n are not both equal to 0.
     * @throws IllegalArgumentException if this = n = 0
