@@ -6,16 +6,18 @@ import scala.annotation.tailrec
   * Implements exponentiation using tail-recursive repeated squaring.
   * @param x The numerator of the fraction.
   * @param y The denominator of the fraction.
+  *
+  * @author <a href="https://github.com/JasonFil">Jason Filippou</a>
   */
-class Rational(x:Int, y:Int) {
+class Rational(x:BigInt, y:BigInt) {
 
   import Rational._
 
   require(y != 0, "Cannot create a Rational with denominator 0")
 
   // Simplify representation by dividing both numer and denom by their gcd.
-  private def gcd(a:Int, b:Int) : Int = if(b == 0) a else gcd(b, a % b)
-  private val gcd : Int= gcd(x, y)
+  private def gcd(a:BigInt, b:BigInt) : BigInt = if(b == 0) a else gcd(b, a % b)
+  private val gcd : BigInt= gcd(x, y)
   private val numer = x / gcd // Make immutable
   private val denom = y / gcd
 
@@ -24,13 +26,13 @@ class Rational(x:Int, y:Int) {
     * Evaluate the `Rational` analytically.
     * @return numer / denom
     */
-  def  eval: Double = numer / denom
+  def  eval: Double = numer.intValue() /  denom.doubleValue()
 
   /**
     * Creates the `Rational` x/1.
     * @param x The numerator of the new `Rational`.
     */
-  def this(x:Int) = this(x, 1)
+  def this(x:BigInt) = this(x, 1)
 
   /**
     * Prints `this` in the form of the fraction `numer` / `denom`.
@@ -40,14 +42,14 @@ class Rational(x:Int, y:Int) {
 
   // Properly writing an equals() method in Scala can be tricky business, as explained here: ]
   // https://alvinalexander.com/scala/how-to-define-equals-hashcode-methods-in-scala-object-equality
-  private def canEqual(x:Any):Boolean = x.isInstanceOf[Rational ]
+  private def canEqual(x:Any):Boolean = x.isInstanceOf[Rational]
 
   private def sameRational(that:Rational ): Boolean = (numer == that.numer) && (denom == that.denom)
 
   override def equals(that:Any):Boolean = {
     that match {
       case that:Rational => that.canEqual(this)  && sameRational(that)// The pre-condition ensures that`that` is an instance of Rational while the post-condition tests if `this` is an instance of `that`.
-      case that:Int => sameRational(new Rational(that, 1))      // When we compare with integers.
+      case that:BigInt => sameRational(new Rational(that, 1))      // When we compare with integers.
       case _ => false // covers null too (check http://daily-scala.blogspot.com/2010/01/matching-nulls.html)
     }
   }
@@ -56,8 +58,8 @@ class Rational(x:Int, y:Int) {
   override def hashCode(): Int = {
     val prime = 31
     var result = 1
-    result = prime * result + numer
-    result = prime*result + denom
+    result = prime * result + numer.intValue
+    result = prime * result + denom.intValue
     result
   }
 
@@ -72,15 +74,15 @@ class Rational(x:Int, y:Int) {
   }
 
   /**
-    * Add `this` to the provided `Int`.
-    * @param that An `Int` to add `this` to.
+    * Add `this` to the provided `BigInt`.
+    * @param that An `BigInt` to add `this` to.
     * @return The `Rational` instance corresponding to the fraction (this + that).
     */
-  def + (that:Int): Rational = this + new Rational(that, 1)
+  def + (that:BigInt): Rational = this + new Rational(that, 1)
 
   /**
-    * Subtracts the provided Rational instance from `this`.
-    * @param that A Rational instance, which will be the subtrahend.
+    * Subtracts the provided `Rational` instance from `this`.
+    * @param that A `Rational` instance, which will be the subtrahend.
     * @return this - that.
     */
   def - (that:Rational):Rational  = {
@@ -89,15 +91,15 @@ class Rational(x:Int, y:Int) {
   }
 
   /**
-    * Subtracts the `Int` instance that` from `this`.
-    * @param that An Int` instance to subtract from `this`.
-    * @return this = that.
+    * Subtracts the `BigInt` instance `that` from `this`.
+    * @param that An `BigInt` instance to subtract from `this`.
+    * @return this - that.
     */
-  def - (that:Int) : Rational =  this - new Rational(that, 1)
+  def - (that:BigInt) : Rational =  this - new Rational(that, 1)
 
   /**
-    * Multiplies the provided `Rational` instance with this.
-    * @param that A Rational instance.
+    * Multiplies the provided `Rational` instance with `this`.
+    * @param that A `Rational` instance.
     * @return this * that.
     */
   def * (that:Rational):Rational = {
@@ -106,18 +108,18 @@ class Rational(x:Int, y:Int) {
   }
 
   /**
-    * Multiplies the provided `Int` instance with this.
+    * Multiplies the provided `BigInt` instance with `this`.
     * @param that A Rational instance.
     * @return this * that.
     */
-  def * (that:Int) = new Rational(numer * that, denom)
+  def * (that:BigInt) = new Rational(numer * that, denom)
 
   /**
     * Divides `this` instance over the provided `Rational` instance,
     * as long as it is non-zero.
-    * @param that A Rational instance which will play the role of the divisor.
+    * @param that A `Rational` instance which will play the role of the divisor.
     * @return this / that.
-    * @throws IllegalArgumentException if that is zero.
+    * @throws IllegalArgumentException if `that` is zero.
     */
   def / (that: Rational ): Rational = {
     //noinspection ComparingUnrelatedTypes // for that != 0
@@ -126,13 +128,13 @@ class Rational(x:Int, y:Int) {
   }
 
   /**
-    * Divides `this` instance over the provided `Int` instance,
+    * Divides `this` instance over the provided `BigInt` instance,
     * as long as it is non-zero.
     * @param that A `Rational` instance which will play the role of the divisor.
     * @return this / that.
-    * @throws IllegalArgumentException if that is zero.
+    * @throws IllegalArgumentException if `that` is zero.
     */
-  def / (that:Int) : Rational = {
+  def / (that:BigInt) : Rational = {
     //noinspection ComparingUnrelatedTypes
     require((that != null) && that != 0, "Rational / Rational: Provided null or zero argument")
     new Rational(numer, denom * that)
@@ -150,7 +152,6 @@ class Rational(x:Int, y:Int) {
     */
   def > (that: Rational) :Boolean = numer * that.denom > that.numer * denom
 
-
   /**
     * Checks if `this` is equal to OR greater than the provided `Rational`.
     * @return true iff this >= 0, false otherwise.
@@ -158,18 +159,18 @@ class Rational(x:Int, y:Int) {
   def >= (that:Rational) :Boolean = (this > that) || (this == that)
 
   /**
-    * Determines if `this` is STRICTLY greater than the provided `Int`.
-    * @param that An `Int` to compare `this` to.
+    * Determines if `this` is STRICTLY greater than the provided `BigInt`.
+    * @param that An `BigInt` to compare `this` to.
     * @return true iff `this` is STRICTLY greater than `that`, false otherwise.
     */
-  def > (that:Int) : Boolean = this > new Rational(that, 1)
+  def > (that:BigInt) : Boolean = this > new Rational(that, 1)
 
   /**
     * Checks if `this` is bigger than OR equal to `that`.
-    * @param that An `Int` to compare `this` to.
+    * @param that An `BigInt` to compare `this` to.
     * @return true iff `this` is  greater than OR equal to `that`, false otherwise.
     */
-  def >= (that:Int) : Boolean = {
+  def >= (that:BigInt) : Boolean = {
     val r = new Rational(that, 1)
     (this > r) || (this == r)       // Avoid calling constructor twice
   }
@@ -187,20 +188,20 @@ class Rational(x:Int, y:Int) {
   def <= (that:Rational) : Boolean = !(this > that)
 
   /**
-    * Checks if `this` is STRICTLY smaller than the `Int` provided.
-    * @param that An `Int` instance.
+    * Checks if `this` is STRICTLY smaller than the `BigInt` provided.
+    * @param that An `BigInt` instance.
     * @return true iff this < that, false otherwise.
     */
-  def <(that:Int): Boolean = {
+  def <(that:BigInt): Boolean = {
     !(this >= that)
   }
 
   /**
-    * Checks if `this` is smaller than OR equal to the `Int` provided.
-    * @param that An `Int` instance.
+    * Checks if `this` is smaller than OR equal to the `BigInt` provided.
+    * @param that An `BigInt` instance.
     * @return true iff this <= that, false otherwise.
     */
-  def <= (that:Int):Boolean = {
+  def <= (that:BigInt):Boolean = {
     !(this > that)
   }
 
@@ -214,11 +215,11 @@ class Rational(x:Int, y:Int) {
   def ^ (n:Int):Rational = {
 
     // Inner two-arg function
-    def pow(base:Int, exp:Int):Int = {
+    def pow(base:BigInt, exp:Int):BigInt = {
       require(exp >= 0 && base >=0, "We need positive integer arguments for this method.")
       // Power computation with tail-recursive repeated squaring.
       @tailrec
-      def pow(currExp:Int, maxExp:Int, currTerm:Int, prodAccum:Int): Int = {
+      def pow(currExp:BigInt, maxExp:BigInt, currTerm:BigInt, prodAccum:BigInt): BigInt = {
         assert(currExp <= maxExp, "The current exponent should never surpass the original one.")
         if(currExp <= maxExp / 2)
           pow(2*currExp, maxExp, currTerm * currTerm, prodAccum)    // Next iteration on current term.
