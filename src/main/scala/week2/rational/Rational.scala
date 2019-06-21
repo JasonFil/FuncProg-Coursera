@@ -33,25 +33,22 @@ class Rational(x:Int, y:Int) {
   def this(x:Int) = this(x, 1)
 
   /**
-    * Prints this in the form of the fraction numer / denom.
-    * @return The fraction numer / denom (the `Rational` instance unevaluated).
+    * Prints `this` in the form of the fraction `numer` / `denom`.
+    * @return The fraction `numer` / `denom` (the `Rational` instance unevaluated).
     */
   override def toString : String = numer + "/" + denom // give me something to work with
 
   // Properly writing an equals() method in Scala can be tricky business, as explained here: ]
   // https://alvinalexander.com/scala/how-to-define-equals-hashcode-methods-in-scala-object-equality
-  private def canEqual(x:Any) = x.isInstanceOf[Rational ]
+  private def canEqual(x:Any):Boolean = x.isInstanceOf[Rational ]
 
-  private def sameRational(that:Rational ): Boolean = {
-    (numer == that.numer) && (denom == that.denom)
-  }
+  private def sameRational(that:Rational ): Boolean = (numer == that.numer) && (denom == that.denom)
 
   override def equals(that:Any):Boolean = {
     that match {
       case that:Rational => that.canEqual(this)  && sameRational(that)// The pre-condition ensures that`that` is an instance of Rational while the post-condition tests if `this` is an instance of `that`.
       case that:Int => sameRational(new Rational(that, 1))      // When we compare with integers.
       case _ => false // covers null too (check http://daily-scala.blogspot.com/2010/01/matching-nulls.html)
-
     }
   }
 
@@ -65,7 +62,7 @@ class Rational(x:Int, y:Int) {
   }
 
   /**
-    * Adds the provided `Rational` instance to this.
+    * Adds the provided `Rational` instance to `this`.
     * @param that The provided `Rational`.
     * @return this + that.
     */
@@ -75,14 +72,14 @@ class Rational(x:Int, y:Int) {
   }
 
   /**
-    * Add the current `Rational` to the provided `Int`.
-    * @param that An `Int` to add this to.
+    * Add `this` to the provided `Int`.
+    * @param that An `Int` to add `this` to.
     * @return The `Rational` instance corresponding to the fraction (this + that).
     */
   def + (that:Int): Rational = this + new Rational(that, 1)
 
   /**
-    * Subtracts the provided Rational instance from this.
+    * Subtracts the provided Rational instance from `this`.
     * @param that A Rational instance, which will be the subtrahend.
     * @return this - that.
     */
@@ -92,8 +89,8 @@ class Rational(x:Int, y:Int) {
   }
 
   /**
-    * Subtracts the `Int` instance that` from this.
-    * @param that An Int` instance to subtract from this.
+    * Subtracts the `Int` instance that` from `this`.
+    * @param that An Int` instance to subtract from `this`.
     * @return this = that.
     */
   def - (that:Int) : Rational =  this - new Rational(that, 1)
@@ -116,7 +113,7 @@ class Rational(x:Int, y:Int) {
   def * (that:Int) = new Rational(numer * that, denom)
 
   /**
-    * Divides the current `Rational` instance over the provided `Rational` instance,
+    * Divides `this` instance over the provided `Rational` instance,
     * as long as it is non-zero.
     * @param that A Rational instance which will play the role of the divisor.
     * @return this / that.
@@ -129,7 +126,7 @@ class Rational(x:Int, y:Int) {
   }
 
   /**
-    * Divides the current `Rational` instance over the provided `Int` instance,
+    * Divides `this` instance over the provided `Int` instance,
     * as long as it is non-zero.
     * @param that A `Rational` instance which will play the role of the divisor.
     * @return this / that.
@@ -142,55 +139,55 @@ class Rational(x:Int, y:Int) {
   }
   
   /**
-    * Negates this.
+    * Negates `this`.
     * @return -this.
     */
   def unary_- : Rational = new Rational (-numer, denom)
 
   /**
-    * Checks if the current Rational is STRICTLY greater than the given Rational.
-    * @return true iff this is greater than zero, false otherwise.
+    * Checks if `this` is STRICTLY greater than the given `Rational`.
+    * @return true iff `this` is greater than zero, false otherwise.
     */
   def > (that: Rational) :Boolean = numer * that.denom > that.numer * denom
 
 
   /**
-    * Checks if the current Rational is equal to OR greater than the provided Rational.
+    * Checks if `this` is equal to OR greater than the provided `Rational`.
     * @return true iff this >= 0, false otherwise.
     */
   def >= (that:Rational) :Boolean = (this > that) || (this == that)
 
   /**
-    * Determines if this is STRICTLY greater than the provided integer.
-    * @param that An integer.
-    * @return true iff this is STRICTLY greater than that, false otherwise.
+    * Determines if `this` is STRICTLY greater than the provided `Int`.
+    * @param that An `Int` to compare `this` to.
+    * @return true iff `this` is STRICTLY greater than `that`, false otherwise.
     */
   def > (that:Int) : Boolean = this > new Rational(that, 1)
 
   /**
-    * Checks if the current `Rational` is bigger than OR equal to `that`.
-    * @param that An `Int` to compare this to.
-    * @return
+    * Checks if `this` is bigger than OR equal to `that`.
+    * @param that An `Int` to compare `this` to.
+    * @return true iff `this` is  greater than OR equal to `that`, false otherwise.
     */
   def >= (that:Int) : Boolean = {
     val r = new Rational(that, 1)
     (this > r) || (this == r)       // Avoid calling constructor twice
   }
 
-  /** Checks if the current  `Rational` is STRICTLY smaller than the `Rational` provided.
+  /** Checks if `this` is STRICTLY smaller than the `Rational` provided.
     * @param that A `Rational` to compare this to.
     * @return true iff this < that, false otherwise.
     */
   def < (that:Rational) : Boolean = !(this >= that)
 
-  /** Checks if the current  `Rational` is  smaller than OR equal to the `Rational` provided.
+  /** Checks if `this` is  smaller than OR equal to the `Rational` provided.
     * @param that A `Rational` to compare this to.
     * @return true iff this <= that, false otherwise.
     */
   def <= (that:Rational) : Boolean = !(this > that)
 
   /**
-    * Checks if the current `Rational` is STRICTLY smaller than the `Int` provided.
+    * Checks if `this` is STRICTLY smaller than the `Int` provided.
     * @param that An `Int` instance.
     * @return true iff this < that, false otherwise.
     */
@@ -199,7 +196,7 @@ class Rational(x:Int, y:Int) {
   }
 
   /**
-    * Checks if the current `Rational` is smaller than OR equal to the `Int` provided.
+    * Checks if `this` is smaller than OR equal to the `Int` provided.
     * @param that An `Int` instance.
     * @return true iff this <= that, false otherwise.
     */
@@ -208,9 +205,9 @@ class Rational(x:Int, y:Int) {
   }
 
   /**
-    * Raises this to the provided power. The implementation is tail recursive
+    * Raises `this` to the provided power. The implementation is tail recursive
     * and through repeated squaring, such that the code executes in O(log_2n) iterations.
-    * @param n the power to which we will raise the current Rational instance.
+    * @param n the power to which we will raise the current `Rational` instance.
     * @return this raised to the nth power, as long as this and n are not both equal to 0.
     * @throws IllegalArgumentException if this = n = 0
     */
