@@ -3,7 +3,10 @@ import scala.annotation.tailrec
 
 /**
   * Immutable rational number abstraction. Overloads standard arithmetic operators for transparency.
-  * Implements exponentiation using tail-recursive repeated squaring.
+  * Implements exponentiation using tail-recursive repeated squaring. Inner representation is as a tuple
+  * of `BigInt` instances. Several operators are overloaded for binary operations such as addition
+  * and multiplication, as well as binary comparison operators. A method for exponentiation based on
+  * repeated squaring is also provided.
   * @param x The numerator of the fraction.
   * @param y The denominator of the fraction.
   *
@@ -11,11 +14,12 @@ import scala.annotation.tailrec
   */
 class Rational(x:BigInt, y:BigInt) {
 
-  import Rational._
+  import Rational._   // Companion object has all our constants
 
   require(y != 0, "Cannot create a Rational with denominator 0")
 
   // Simplify representation by dividing both numer and denom by their gcd.
+  @tailrec
   private def gcd(a:BigInt, b:BigInt) : BigInt = if(b == 0) a else gcd(b, a % b)
   private val gcd : BigInt= gcd(x, y)
   private val numer = x / gcd // Make immutable
@@ -38,7 +42,7 @@ class Rational(x:BigInt, y:BigInt) {
     * Prints `this` in the form of the fraction `numer` / `denom`.
     * @return The fraction `numer` / `denom` (the `Rational` instance unevaluated).
     */
-  override def toString : String = numer + "/" + denom // give me something to work with
+  override def toString : String = numer + "/" + denom // A nice visual, "unevaluated" format
 
   // Properly writing an equals() method in Scala can be tricky business, as explained here: ]
   // https://alvinalexander.com/scala/how-to-define-equals-hashcode-methods-in-scala-object-equality

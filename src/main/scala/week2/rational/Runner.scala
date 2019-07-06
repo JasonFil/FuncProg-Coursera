@@ -20,8 +20,7 @@ object Runner extends App {
   val x = new Rational(2, 3)
   val w:Int = 0
   val z:Double = 1.3
-  x.process(w)
-  x.process(z)
-  x.process(null )
-  x.process("Slurpies")
+
+  val y = new Rational(10, 11)
+  y + 2.4
 }

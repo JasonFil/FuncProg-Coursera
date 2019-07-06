@@ -16,6 +16,7 @@ object Experiment extends App{
     result
   }
 
+
   val rng = new Random(47)
   val MAX_ITER = 100000
   val MAX_INT = 1000   // Keep the numbers small for this exposition.
