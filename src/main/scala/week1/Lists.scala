@@ -16,7 +16,7 @@ object Lists {
    *  - `xs.isEmpty: Boolean` returns `true` if the list `xs` is empty
    *  - `xs.head: Int` returns the head element of the list `xs`. If the list
    *    is empty an exception is thrown
-   *  - `xs.tail: List[Int]` returns the tail of the list `xs`, i.evaluatedRationalReduction. the the
+   *  - `xs.tail: List[Int]` returns the tail of the list `xs`, i.evaluatedRationalSum. the the
    *    list `xs` without its `head` element
    *
    *  ''Hint:'' instead of writing a `for` or `while` loop, think of a recursive

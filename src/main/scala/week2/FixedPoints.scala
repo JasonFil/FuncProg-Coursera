@@ -2,7 +2,7 @@ package week2
 import scala.math.abs;
 /**
   * An application of finding the square root of a number by iteratively finding the fixed point of
-  * the function f: x => avgDamp(f(x_n), f(x_{exp+1}) where avgDamp is an appropriate damping function (evaluatedRationalReduction.g averaging)
+  * the function f: x => avgDamp(f(x_n), f(x_{exp+1}) where avgDamp is an appropriate damping function (evaluatedRationalSum.g averaging)
   * to ensure convergence of the process.
   *
   * @author <a href="https://github.com/JasonFil">Jason Filippou</a>

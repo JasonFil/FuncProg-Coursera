@@ -30,7 +30,7 @@ class Rational(x:BigInt, y:BigInt) {
     * Evaluate the `Rational` analytically.
     * @return numer / denom
     */
-  def  eval: Double = numer.intValue() /  denom.doubleValue()
+  def  eval: Double = numer.doubleValue() /  denom.doubleValue()
 
   /**
     * Creates the `Rational` x/1.
@@ -48,7 +48,9 @@ class Rational(x:BigInt, y:BigInt) {
   // https://alvinalexander.com/scala/how-to-define-equals-hashcode-methods-in-scala-object-equality
   private def canEqual(x:Any):Boolean = x.isInstanceOf[Rational]
 
-  private def sameRational(that:Rational ): Boolean = (numer == that.numer) && (denom == that.denom)
+  private def sameRational(that:Rational ): Boolean =
+    (numer == that.numer) && (denom == that.denom) ||
+      (numer == -that.numer) && (denom == -that.denom)
 
   override def equals(that:Any):Boolean = {
     that match {
@@ -223,7 +225,7 @@ class Rational(x:BigInt, y:BigInt) {
       require(exp >= 0 && base >=0, "We need positive integer arguments for this method.")
       // Power computation with tail-recursive repeated squaring.
       @tailrec
-      def pow(currExp:BigInt, maxExp:BigInt, currTerm:BigInt, prodAccum:BigInt): BigInt = {
+      def pow(currExp:Int, maxExp:Int, currTerm:BigInt, prodAccum:BigInt): BigInt = {
         assert(currExp <= maxExp, "The current exponent should never surpass the original one.")
         if(currExp <= maxExp / 2)
           pow(2*currExp, maxExp, currTerm * currTerm, prodAccum)    // Next iteration on current term.
@@ -255,7 +257,7 @@ object Rational {
   /**
     * A `Rational` instance which represents 1/1=1.
     */
-  val ONE = new Rational (1, 1)
+ val ONE = new Rational (1, 1)
 
   /**
     * * A `Rational` instance which represents  0/1=0.
@@ -279,5 +281,5 @@ object Rational {
     * (more info <a href="http://bit.ly/2IK21gi">here</a>). We make this value into a `lazy val` to
     * allow the `Rational` to be brought into life without throwing.
     */
-  lazy val ZEROOVERZERO = new Rational(0, 0)
+   lazy val ZEROOVERZERO = new Rational(0, 0)
 }

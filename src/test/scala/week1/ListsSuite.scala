@@ -42,7 +42,7 @@ import org.scalatest.junit.JUnitRunner
 
   /**
    * In Scala, it is allowed to pass an argument to a method using the block
-   * syntax, i.evaluatedRationalReduction. `{ argument }` instead of parentheses `(argument)`.
+   * syntax, i.evaluatedRationalSum. `{ argument }` instead of parentheses `(argument)`.
    *
    * This allows tests to be written in a more readable manner:
    */

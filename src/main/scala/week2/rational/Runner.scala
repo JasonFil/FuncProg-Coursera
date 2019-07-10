@@ -17,10 +17,7 @@ object Runner extends App {
   val g = fraction(230, 17)
   // println((a * b + c*d - e * (f + g)).eval)
 
-  val x = new Rational(2, 3)
+
   val w:Int = 0
   val z:Double = 1.3
-
-  val y = new Rational(10, 11)
-  y + 2.4
 }
